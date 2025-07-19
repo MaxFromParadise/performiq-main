@@ -1,0 +1,154 @@
+@use './functions' as *;
+
+.hypotheses {
+	background: var(--primary-color);
+	padding: rem(160) 0;
+	@media (max-width: 767.98px) {
+		padding: rem(60) 0;
+	}
+	// .hypotheses__container
+	&__container {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 1.5rem;
+		@media (max-width: 767.98px) {
+			grid-template-columns: 1fr;
+		}
+	}
+	// .hypotheses__main
+	&__main {
+	}
+	// .hypotheses__title
+	&__title {
+		color: #000;
+		font-family: Montserrat;
+		font-size: rem(40);
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		margin-bottom: rem(170);
+		width: rem(550);
+		height: rem(255);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #000;
+		position: relative;
+		@media (max-width: 991.98px) {
+			width: rem(350);
+		}
+		@media (max-width: 767.98px) {
+			margin-bottom: rem(40);
+			width: 100%;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -1.43rem; /* Расстояние до нижней части */
+			left: -1.07rem; /* Смещение влево */
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 1.78rem 1.78rem 0 1.78rem; /* Размер треугольника */
+			border-color: var(--primary-color) transparent transparent transparent; /* Фон */
+			z-index: 1;
+			rotate: 135deg;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: -1.55rem; /* Расстояние для обводки */
+			left: -1.15rem; /* Смещение влево для обводки */
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 1.8rem 1.8rem 0 1.8rem; /* Размер треугольника для обводки */
+			border-color: #000000 transparent transparent transparent; /* Цвет обводки */
+			z-index: 0;
+			rotate: 135deg;
+		}
+	}
+	// .hypotheses__text
+	&__text {
+		color: var(--white);
+		font-family: Montserrat;
+		font-size: rem(18);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 166.667%;
+		&:not(:last-child) {
+			margin-bottom: rem(27);
+		}
+	}
+	// .hypotheses__item
+	&__item {
+	}
+}
+.item-hypotheses {
+	color: #fff;
+	font-family: Montserrat;
+	font-size: rem(20);
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	// .item-hypotheses__top
+	&__top {
+		padding: rem(40) rem(50);
+		border: 1px solid #fff;
+	}
+	// .item-hypotheses__title
+	&__title {
+		margin-bottom: rem(12);
+	}
+	// .item-hypotheses__price
+	&__price {
+		font-size: rem(40);
+	}
+	// .item-hypotheses__main
+	&__main {
+		padding: rem(50) rem(50) rem(24) rem(50);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border: 1px solid #fff;
+		border-top: none;
+	}
+	// .item-hypotheses__list-title
+	&__list-title {
+		margin-bottom: rem(26);
+	}
+	// .item-hypotheses__list
+	&__list {
+		margin-bottom: rem(26);
+	}
+	// .item-hypotheses__list-item
+	&__list-item {
+		color: var(--white);
+		font-family: Montserrat;
+		font-size: rem(18);
+		font-style: normal;
+		font-weight: 400;
+		margin-bottom: rem(12);
+		padding-left: 1rem;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: rem(9);
+			width: rem(3);
+			height: rem(3);
+			background-color: var(--white);
+			border-radius: 50%;
+		}
+	}
+	// .item-hypotheses__button
+	&__button {
+		color: #000;
+		max-width: 100%;
+		width: 100%;
+	}
+}
+.button {
+}

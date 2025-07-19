@@ -1,0 +1,113 @@
+@use './functions' as *;
+.solution {
+	padding: rem(160) 0;
+	@media (max-width: 767.98px) {
+		padding: rem(50) 0;
+	}
+	// .solution__container
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		justify-content: space-between;
+		gap: 2rem;
+		@media (max-width: 767.98px) {
+			grid-template-columns: 1fr;
+			gap: 4rem;
+		}
+	}
+	// .solution__main
+	&__main {
+	}
+	// .solution__title
+	&__title {
+		margin-bottom: rem(40);
+	}
+	// .solution__text
+	&__text {
+		color: var(--black-main);
+		font-family: Montserrat;
+		font-size: rem(18);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 166.667%;
+	}
+	// .solution__chat
+	&__chat {
+	}
+}
+.chat-solution {
+	display: flex;
+	flex-direction: column;
+	gap: rem(15);
+	// .chat-solution__item
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: rem(15);
+		position: relative;
+		&:nth-child(even) {
+			align-self: flex-end;
+			.chat-solution__icon {
+				right: -3%;
+				top: -70%;
+			}
+			.chat-solution__number {
+				// left: calc(100% + 1rem);
+				// top: 50%;
+				// transform: translateY(-50%);
+			}
+			margin-left: 5rem;
+		}
+		&:nth-child(odd) {
+			.chat-solution__icon {
+				left: -4%;
+				top: -50%;
+			}
+			margin-right: 5rem;
+			// .chat-solution__number {
+			// 	right: calc(100% + 1rem);
+			// 	top: 50%;
+			// 	transform: translateY(-50%);
+			// }
+		}
+		&:nth-child(1) {
+			.chat-solution__icon {
+				right: 0;
+				top: -95%;
+			}
+		}
+		&:nth-child(4) {
+			.chat-solution__icon {
+				right: 0;
+				top: -20%;
+			}
+		}
+	}
+	// .chat-solution__number
+	&__number {
+		font-size: rem(46); /* Размер текста */
+		font-weight: 700;
+		color: transparent;
+		-webkit-text-stroke: 2px var(--primary-color);
+		color: #fff;
+		// position: absolute;
+	}
+	// .chat-solution__message
+	&__message {
+		padding: rem(15);
+		border-radius: rem(15);
+		background: var(--primary-color);
+		position: relative;
+		color: var(--white);
+	}
+	// .chat-solution__text
+	&__text {
+		max-width: rem(380);
+	}
+	// .chat-solution__icon
+	&__icon {
+		position: absolute;
+		z-index: -1;
+	}
+}

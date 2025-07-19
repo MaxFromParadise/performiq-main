@@ -1,0 +1,130 @@
+@use './functions' as *;
+:root {
+	--white: #fff;
+	--primary-color: #00b2ff;
+	--secondary-color: #e93c53;
+	--black-main: #2d2d2d;
+	--gray-light: #b6b6b6;
+	--gray-dark: #7e7e7e;
+}
+*,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	margin: 0 auto;
+}
+body,
+html {
+	height: 100%;
+	min-width: 375px;
+}
+html {
+	scroll-behavior: smooth;
+}
+a {
+	text-decoration: none;
+	color: unset;
+}
+ul {
+	list-style: none;
+}
+address {
+	font-style: normal;
+}
+.lock {
+	overflow-y: hidden;
+}
+[class*='__container'] {
+	max-width: 1220px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+.title-1 {
+	color: var(--black-main);
+	font-size: 3.75rem;
+	font-weight: 700;
+	@media (max-width: 767.98px) {
+		font-size: 2.5rem;
+	}
+}
+.title-2 {
+	color: var(--black-main);
+	font-size: 3.75rem;
+	font-weight: 700;
+	@media (max-width: 767.98px) {
+		font-size: 2.5rem;
+	}
+}
+.title-3 {
+	color: var(--black-main);
+	font-size: 1.875rem;
+	font-weight: 700;
+}
+.title-4 {
+	color: var(--black-main);
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+.button {
+	font-family: 'Montserrat', sans-serif;
+	display: block;
+	padding: 0.8125rem 1rem;
+	border: 1px solid var(--primary-color);
+	background: var(--white);
+	color: var(--primary-color);
+	text-align: center;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 218.75%;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: color 0.3s ease 0s, border 0.3s ease 0s, background 0.3s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			border: 1px solid var(--white);
+			color: var(--white);
+			background: var(--primary-color);
+		}
+	}
+	@media (max-width: 767.98px) {
+		max-width: 100%;
+		width: 100%;
+	}
+}
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+}
+.slider-navigation {
+	display: flex;
+	align-items: center;
+	&__bullets {
+	}
+	&__arrow {
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		padding: 0.5rem;
+		svg {
+			fill: var(--primary-color);
+		}
+		&:disabled {
+			svg {
+				fill: #e6e6e6;
+			}
+		}
+	}
+}

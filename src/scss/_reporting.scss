@@ -1,0 +1,41 @@
+@use './functions' as *;
+.reporting {
+	padding: rem(160) 0 rem(60) 0;
+	@media (max-width: 767.98px) {
+		padding: rem(60) 0 rem(60) 0;
+	}
+	// .reporting__container
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		@media (max-width: 767.98px) {
+			grid-template-columns: 1fr;
+		}
+	}
+	// .reporting__img
+	&__img {
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	// .reporting__content
+	&__content {
+	}
+	// .reporting__title
+	&__title {
+		margin-bottom: rem(40);
+	}
+	// .reporting__text
+	&__text {
+		color: #000;
+		font-family: Montserrat;
+		font-size: rem(18);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 166.667%;
+	}
+}
+.title-2 {
+}

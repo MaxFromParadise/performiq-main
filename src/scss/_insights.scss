@@ -1,0 +1,112 @@
+@use './functions' as *;
+.insights {
+	padding-top: rem(160);
+	padding-bottom: rem(160);
+	@media (max-width: 767.98px) {
+		padding-top: rem(60);
+		padding-bottom: rem(60);
+	}
+	// .insights__container
+	&__container {
+	}
+	// .insights__title
+	&__title {
+		margin-bottom: rem(60);
+		@media (max-width: 767.98px) {
+			margin-bottom: rem(30);
+		}
+	}
+	// .insights__flex
+	&__flex {
+		display: grid;
+		grid-template-columns: 0.7fr rem(120) 1fr;
+		justify-content: space-between;
+		gap: 2rem;
+		@media (max-width: 991.98px) {
+			grid-template-columns: 1fr;
+		}
+	}
+	// .insights__item
+	&__item {
+	}
+	// .insights__divider
+	&__divider {
+		display: flex;
+		align-items: center;
+		@media (max-width: 991.98px) {
+			display: none;
+		}
+		img {
+			width: 100%;
+		}
+	}
+}
+.title-2 {
+}
+.item-insights {
+	display: flex;
+	gap: rem(20);
+	@media (max-width: 767.98px) {
+		width: 100%;
+	}
+	// .item-insights__img
+	&__img {
+		img {
+			width: 100%;
+			height: 100%;
+			@media (max-width: 767.98px) {
+				width: rem(120);
+				height: rem(120);
+			}
+		}
+	}
+	// .item-insights__content
+	&__content {
+	}
+	// .item-insights__title
+	&__title {
+		color: var(--primary-color, #00b2ff);
+		font-family: Montserrat;
+		font-size: rem(20);
+		font-style: normal;
+		font-weight: 700;
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+	}
+	// .item-insights__subtitle
+	&__subtitle {
+		color: var(--black-main, #2d2d2d);
+		font-family: Montserrat;
+		font-size: rem(20);
+		font-style: normal;
+		font-weight: 700;
+		margin-bottom: rem(25);
+	}
+	// .item-insights__list
+	&__list {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: rem(20);
+		max-width: rem(385);
+	}
+	// .item-insights__list-item
+	&__list-item {
+		border-radius: 2rem;
+		padding: rem(10);
+		background: #b5e9ff;
+
+		font-family: Montserrat;
+		font-size: rem(14);
+		font-style: normal;
+		font-weight: 400;
+		@media (max-width: 767.98px) {
+			font-size: rem(7.3);
+		}
+		&_accent {
+			background: var(--primary-color);
+			color: var(--white);
+		}
+	}
+}

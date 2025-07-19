@@ -1,0 +1,62 @@
+@use './functions' as *;
+.solvings {
+	padding: rem(160) 0;
+	@media (max-width: 767.98px) {
+		padding: rem(60) 0;
+	}
+	// .solvings__container
+	&__container {
+	}
+	// .solvings__title
+	&__title {
+		margin-bottom: rem(50);
+	}
+	// .solvings__subtitle
+	&__subtitle {
+		color: #000;
+		font-family: Montserrat;
+		font-size: rem(24);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 158.333%;
+		margin-bottom: rem(50);
+	}
+	// .solvings__grid
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: rem(40);
+		margin-bottom: rem(50);
+		@media (max-width: 991.98px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: 767.98px) {
+			grid-template-columns: 1fr;
+		}
+	}
+	// .solvings__item
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: rem(15);
+	}
+	// .solvings__icon
+	&__icon {
+	}
+	// .solvings__descr
+	&__descr {
+		color: #555a65;
+		font-family: Montserrat;
+		font-size: rem(18);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 166.667%;
+	}
+	// .solvings__button
+	&__button {
+	}
+}
+.title-2 {
+}
+.button {
+}

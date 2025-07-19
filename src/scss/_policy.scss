@@ -1,0 +1,71 @@
+@use './functions' as *;
+.policy {
+	color: var(--black-main);
+	font-family: Montserrat;
+	font-size: rem(18);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 166.667%;
+	padding: rem(160) 0;
+	word-wrap: break-word;
+	@media (max-width: 767.98px) {
+		padding: rem(60) 0;
+	}
+	// .policy__block
+	&__block {
+		margin-bottom: rem(60);
+		@media (max-width: 767.98px) {
+			margin-bottom: rem(40);
+		}
+	}
+	// .policy__title
+	&__title {
+		color: var(--primary-color, #00b2ff);
+		font-family: Montserrat;
+		font-size: rem(60);
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100%;
+	}
+	// .policy__subtitle
+	&__subtitle {
+	}
+	// .policy__title-2
+	&__title-2 {
+		font-size: rem(30);
+		font-weight: 700;
+		margin-bottom: rem(30);
+	}
+	// .policy__text
+	&__text {
+		margin-bottom: 1.5rem;
+	}
+	// .policy__dark
+	&__dark {
+		font-weight: 700;
+		margin-bottom: rem(30);
+	}
+	// .policy__list
+	&__list {
+	}
+	// .policy__list-item
+	&__list-item {
+		margin-bottom: rem(13);
+		padding-left: 1rem;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: rem(14);
+			width: rem(3);
+			height: rem(3);
+			background-color: var(--black-main);
+			border-radius: 50%;
+		}
+	}
+	// .policy__dark-text
+	&__dark-text {
+		font-weight: 700;
+	}
+}

@@ -1,0 +1,31 @@
+.discuss {
+	background: var(--primary-color);
+	padding-top: 8rem;
+	padding-bottom: 9rem;
+	// .discuss__container
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	// .discuss__title
+	&__title {
+		color: var(--white);
+		text-align: center;
+		font-size: 40px;
+		font-weight: 700;
+		span {
+			color: var(--black-main);
+		}
+		&:not(:last-child) {
+			margin-bottom: 2.875rem;
+		}
+	}
+	// .discuss__button
+	&__button {
+		max-width: 26.375rem;
+		width: 100%;
+	}
+}
+.button-main {
+}
