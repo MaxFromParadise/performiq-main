@@ -121,7 +121,7 @@ function validatePhoneNumber(number) {
 }
 
 if (document.querySelector('.trusted-companies__slider .swiper')) {
-	const swiper = new Swiper('.trusted-companies__slider .swiper', {
+	const trustedCompanies = new Swiper('.trusted-companies__slider .swiper', {
 		// Optional parameters
 		loop: true,
 		speed: 4000,
@@ -130,5 +130,59 @@ if (document.querySelector('.trusted-companies__slider .swiper')) {
 		autoplay: {
 			delay: 0,
 		},
+	});
+}
+if (document.querySelector('.clients__slider .swiper')) {
+	const clientsSlider = new Swiper('.clients__slider .swiper', {
+		// Optional parameters
+		loop: false,
+		speed: 1000,
+		slidesPerView: 'auto',
+		spaceBetween: 30,
+		autoplay: {
+			delay: 15000,
+		},
+		navigation: {
+			nextEl: '.clients__next',
+			prevEl: '.clients__prev',
+		},
+		on: {
+			slideChange: controlVideos,
+		},
+	});
+	function controlVideos() {
+		document.querySelectorAll('.banner-slide-clients').forEach((slide, index) => {
+			const videoWrapper = slide.querySelector('.banner-slide-clients__video');
+			const video = videoWrapper?.querySelector('video');
+			if (!video) return;
+
+			if (index === clientsSlider.activeIndex) {
+				// Пауза по умолчанию — пользователь сам нажмёт play
+			} else {
+				video.pause();
+				videoWrapper.classList.remove('is-playing');
+			}
+		});
+	}
+
+	document.querySelectorAll('.banner-slide-clients__video').forEach((wrapper) => {
+		const video = wrapper.querySelector('video');
+		if (!video) return;
+
+		wrapper.addEventListener('click', () => {
+			if (video.paused) {
+				video.play().catch(() => {});
+			} else {
+				video.pause();
+			}
+		});
+
+		video.addEventListener('playing', () => {
+			wrapper.classList.add('is-playing');
+		});
+
+		video.addEventListener('pause', () => {
+			wrapper.classList.remove('is-playing');
+		});
 	});
 }
