@@ -1573,6 +1573,9 @@
 			@media (max-width: 767.98) {
 				margin-bottom: rem(40);
 			}
+			span {
+				color: var(--primary-color);
+			}
 		}
 		// .clients__slider
 		&__slider {
