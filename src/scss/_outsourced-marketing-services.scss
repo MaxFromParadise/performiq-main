@@ -2179,4 +2179,217 @@
 			}
 		}
 	}
+	.clients {
+		margin-bottom: rem(110);
+		// .clients__container
+		&__container {
+		}
+		&__grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			align-items: start;
+			gap: rem(30);
+			@media (max-width: 767.98px) {
+				grid-template-columns: 1fr;
+			}
+		}
+		// .clients__title
+		&__title {
+			text-align: center;
+			font-size: rem(50);
+			font-weight: 700;
+			line-height: 120%;
+			margin-bottom: rem(35);
+			@media (max-width: 767.98px) {
+				font-size: rem(30);
+			}
+			span {
+				color: var(--primary-color);
+			}
+		}
+		// .subitem-clients__subtitle
+		&__subtitle {
+			text-align: center;
+			margin: 0 auto;
+			font-size: rem(16);
+			font-weight: 500;
+			line-height: 120%;
+			margin-bottom: rem(50);
+			max-width: rem(681);
+		}
+		// .clients__col
+		&__col {
+			display: flex;
+			flex-direction: column;
+			gap: rem(35);
+			&:nth-child(even) {
+				flex-direction: column-reverse;
+				@media (max-width: 767.98px) {
+					flex-direction: column;
+				}
+			}
+		}
+		// .clients__item
+		&__item {
+		}
+		// .clients__subitem
+		&__subitem {
+		}
+	}
+	.item-clients {
+		padding: rem(33) rem(30);
+		@media (max-width: 767.98px) {
+			padding: rem(20);
+		}
+		// .item-clients_kaspersky
+		&_kaspersky {
+			border-radius: rem(10);
+			border: 1px solid rgba(3, 8, 43, 0.5);
+			background: linear-gradient(180deg, #dcffe1 3.46%, #fff 100%);
+		}
+		// .item-clients_skoda
+		&_skoda {
+			border-radius: rem(10);
+			border: 1px solid rgba(3, 8, 43, 0.5);
+			background: linear-gradient(180deg, #e9dcff 3.46%, #fff 100%);
+		}
+		// .item-clients__tags
+		&__tags {
+			display: flex;
+			align-items: center;
+			gap: rem(10);
+			margin-bottom: rem(30);
+			flex-wrap: wrap;
+		}
+		// .item-clients__tag
+		&__tag {
+			border-radius: rem(5);
+			border: 1px solid #03082b;
+			font-size: rem(10);
+			font-weight: 500;
+			line-height: 120%;
+			padding: rem(5) rem(8);
+		}
+		// .item-clients__company
+		&__company {
+			max-width: rem(241);
+			height: rem(50);
+			margin-bottom: rem(25);
+			img {
+				width: 100%;
+				height: 100%;
+				aspect-ratio: 241.51/50;
+			}
+		}
+		// .item-clients__text
+		&__text {
+			font-size: rem(20);
+			font-weight: 500;
+			line-height: 120%;
+			margin-bottom: rem(10);
+		}
+		// .item-clients__divider
+		&__divider {
+			height: rem(1);
+			width: 100%;
+			margin-bottom: rem(28);
+			background: rgba(3, 8, 43, 0.5);
+		}
+		// .item-clients__info
+		&__info {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			margin-bottom: rem(38);
+		}
+		// .item-clients__button
+		&__button {
+			max-width: rem(321);
+			width: 100%;
+		}
+	}
+	.info-item-clients {
+		// .info-item-clients__block
+		&__block {
+		}
+		// .info-item-clients__title
+		&__title {
+			font-size: rem(20);
+			font-weight: 700;
+			line-height: 120%;
+			margin-bottom: rem(8);
+		}
+		// .info-item-clients__text
+		&__text {
+			font-size: rem(16);
+			font-weight: 500;
+			line-height: 120%;
+		}
+	}
+	.button {
+	}
+	.subitem-clients {
+		border-radius: rem(10);
+		border: 1px solid rgba(3, 8, 43, 0.5);
+		padding: rem(33) rem(30);
+		background: #03082b;
+		@media (max-width: 767.98px) {
+			padding: rem(20);
+		}
+		// .subitem-clients__top
+		&__top {
+			display: flex;
+			gap: rem(20);
+			margin-bottom: rem(40);
+		}
+		// .subitem-clients__img
+		&__img {
+			width: rem(86);
+			height: rem(86);
+			background: #fff;
+			border-radius: 50%;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		// .subitem-clients__descr
+		&__descr {
+		}
+		// .subitem-clients__title
+		&__title {
+			color: #fff;
+			font-size: rem(14);
+			font-weight: 700;
+			line-height: 100%;
+			margin-bottom: rem(10);
+		}
+		// .subitem-clients__subtitle
+		&__subtitle {
+			color: #fff;
+			font-size: rem(14);
+			font-weight: 400;
+			line-height: 100%;
+			margin-bottom: rem(19);
+			span {
+				font-weight: 700;
+			}
+		}
+		// .subitem-clients__logo
+		&__logo {
+			height: rem(18);
+			max-width: rem(125);
+			img {
+				width: 100%;
+				height: 100%;
+				aspect-ratio: 241.51/50;
+			}
+		}
+		// .subitem-clients__text
+		&__text {
+			color: #fff;
+			font-size: rem(20);
+			font-weight: 400;
+			line-height: 120%;
+		}
+	}
 }
