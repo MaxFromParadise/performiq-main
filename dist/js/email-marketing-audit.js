@@ -227,3 +227,76 @@ function updateActiveBullet(swiper, className) {
 		});
 	});
 }
+if (document.querySelector('.slider-cases.swiper')) {
+	const sliderCases = new Swiper('.slider-cases.swiper', {
+		lazy: true,
+		speed: 1000,
+		spaceBetween: 80,
+		autoplay: { delay: 8000 },
+		navigation: { nextEl: '.slider-cases__arrow_next', prevEl: '.slider-cases__arrow_prev' },
+		on: {
+			init() {
+				createBullets(this, '.slider-cases__bullets');
+			},
+			slideChange() {
+				updateActiveBullet(this, '.slider-cases__bullets');
+			},
+		},
+	});
+}
+(function () {
+	// Настраиваемая ширина "центральной полосы" в пикселях
+	const CENTER_BAND = 80;
+
+	const texts = Array.from(document.querySelectorAll('.item-main-gains__text'));
+
+	if (!texts.length) return;
+
+	let ticking = false;
+
+	function updateStyles() {
+		const viewportCenter = window.innerHeight / 2;
+
+		texts.forEach((el) => {
+			const rect = el.getBoundingClientRect();
+			// Берём геометрический центр элемента
+			const elCenter = rect.top + rect.height / 2;
+			const delta = elCenter - viewportCenter;
+
+			// Сбросим стили перед назначением (на случай изменения состояний)
+			// (не обязательно, но полезно, если ты будешь расширять логику)
+			// el.style.removeProperty('font-weight');
+			// el.style.removeProperty('color');
+			el.style.transition = '0.6s ease 0s';
+
+			if (Math.abs(delta) <= CENTER_BAND) {
+				// В области центра экрана
+				el.style.fontWeight = '700';
+				el.style.color = '#00B2FF';
+			} else if (delta > 0) {
+				// Ниже центра экрана
+				el.style.fontWeight = '700';
+				el.style.color = '#ADB0BC';
+			} else {
+				// Выше центра экрана
+				el.style.fontWeight = '700';
+				el.style.color = '#292B32';
+			}
+		});
+
+		ticking = false;
+	}
+
+	function onScrollOrResize() {
+		if (!ticking) {
+			ticking = true;
+			requestAnimationFrame(updateStyles);
+		}
+	}
+
+	// Первичная отрисовка и подписки
+	window.addEventListener('scroll', onScrollOrResize, { passive: true });
+	window.addEventListener('resize', onScrollOrResize);
+	window.addEventListener('load', updateStyles);
+	document.addEventListener('DOMContentLoaded', updateStyles);
+})();
